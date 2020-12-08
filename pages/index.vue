@@ -1,68 +1,60 @@
 <template>
   <div class="container">
-    <div class="country">
-      <img src="~/assets/images/brazilFlag.jpg" alt="" />
-      <h3 class="name">{{ name }}</h3>
-      <p class="information population"><b>Population:</b> {{ population }}</p>
-      <p class="information region"><b>Region:</b> {{ region }}</p>
-      <p class="information capital"><b>Capital:</b> {{ capital }}</p>
+    <div class="search">
+      <search></search>
+      <filter-region></filter-region>
     </div>
 
-    <select name="region" id="region">
-      Filter by Region
-      <ul>
-        <li>Africa</li>
-        <li>America</li>
-        <li>Asia</li>
-        <li>Europe</li>
-        <li>Oceania</li>
-      </ul>
-    </select>
+    <div class="cards">
+      <card
+        v-for="country in countries"
+        :key="country.alpha2Code"
+        :flag="country.flag"
+        :name="country.name"
+        :code="country.alpha2Code"
+        :population="country.population"
+        :region="country.region"
+        :capital="country.capital"
+      />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import axios from 'axios'
+import Card from '~/components/Card.vue'
+import FilterRegion from '~/components/FilterRegion.vue'
+import Search from '~/components/Search.vue'
 
 export default Vue.extend({
+  components: { FilterRegion, Search },
   data() {
     return {
-      name: 'Brazil',
-      population: '206.135.893',
-      region: 'Americas',
-      capital: 'Brasilia',
+      countries: [],
     }
+  },
+
+  mounted() {
+    axios
+      .get('https://restcountries.eu/rest/v2/region/europe')
+      .then((response) => (this.countries = response.data))
   },
 })
 </script>
 
 <style>
 .container {
-  margin: 40px;
-  min-height: 100vh;
+  margin: 50px;
+}
+.search {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-
-.country {
-  background: white;
-  -webkit-box-shadow: 2px 10px 23px -6px rgba(160, 160, 160, 0.45);
-  box-shadow: 2px 10px 23px -6px rgba(160, 160, 160, 0.45);
-}
-
-.name {
-  margin: 15px;
-}
-
-.information {
-  margin-left: 15px;
-  line-height: 1.7;
-  font-size: 13px;
-  font-weight: 300;
-}
-
-.capital {
-  margin-bottom: 40px;
+.cards {
+  margin: 20px -20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 </style>
