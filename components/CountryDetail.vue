@@ -133,11 +133,13 @@ b {
   justify-content: end;
 }
 .border-button {
-  margin: 5px;
+  margin: 5px 10px 5px 0px;
   background-color: hsl(209, 23%, 22%);
   box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
   border-style: solid 2px;
   padding: 0 17px;
   height: 25px;
+  display: inline-flex;
+  align-items: center;
 }
 </style>

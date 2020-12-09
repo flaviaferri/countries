@@ -1,6 +1,6 @@
 <template>
   <div class="filter-wrapper">
-    <h3 class="title">You´re seen {{ selected }} countries</h3>
+    <h2 class="title">{{ selected }} countries</h2>
     <div class="filter">
       <v-select
         class="custom"
@@ -47,7 +47,7 @@ export default Vue.extend({
 
 .title {
   margin: 0;
-  font-weight: 500;
+  font-weight: 350;
 }
 
 .filter {
