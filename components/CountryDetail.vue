@@ -1,39 +1,56 @@
 <template>
   <div class="countryDetail" id="countryDetail">
-    <img :src="flag" alt="" />
-    <h3 class="name">{{ name }}</h3>
-    <p class="information"><b>Native Name:</b> {{ nativeName }}</p>
-    <p class="information"><b>Population:</b> {{ population }}</p>
-    <p class="information"><b>Region:</b> {{ region }}</p>
-    <p class="information"><b>Sub Region:</b> {{ subregion }}</p>
-    <p class="information"><b>Capital:</b> {{ capital }}</p>
-    <p class="information">
-      <b>Top Level Domain:</b>
-      <span v-for="domain in topLevelDomain" :key="domain">
-        {{ domain }}
-      </span>
-    </p>
-    <p
-      v-for="currencie in currencies"
-      :key="currencie.name"
-      class="information"
-    >
-      <b>Currencies:</b> {{ currencie.name }}
-    </p>
-    <p class="information">
-      <b>Languages:</b>
-      <span v-for="language in languages" :key="language.name">
-        {{ language.name }}
-      </span>
-    </p>
-    <p class="information">
-      <b>Border Countries:</b>
-      <button v-for="border in borders" :key="border">
-        <NuxtLink :to="{ path: 'details', query: { id: border } }">
-          {{ border }}
-        </NuxtLink>
-      </button>
-    </p>
+    <a class="back-button" @click="$router.go(-1)"> Back</a>
+
+    <div class="country-content">
+      <div class="flag-wrapper">
+        <img :src="flag" alt="name" class="flag" />
+      </div>
+
+      <div class="country-info">
+        <h2 class="country-info__name">{{ name }}</h2>
+
+        <div class="country-information">
+          <div class="country-information__column">
+            <p><b>Native Name:</b> {{ nativeName }}</p>
+            <p><b>Population:</b> {{ population }}</p>
+            <p><b>Region:</b> {{ region }}</p>
+            <p><b>Sub Region:</b> {{ subregion }}</p>
+            <p><b>Capital:</b> {{ capital }}</p>
+          </div>
+
+          <div class="country-information__column">
+            <p>
+              <b>Top Level Domain:</b>
+              <span v-for="domain in topLevelDomain" :key="domain">
+                {{ domain }}
+              </span>
+            </p>
+            <p v-for="currencie in currencies" :key="currencie.name">
+              <b>Currencies:</b> {{ currencie.name }}
+            </p>
+            <p>
+              <b>Languages:</b>
+              <span v-for="language in languages" :key="language.name">
+                {{ language.name }}
+              </span>
+            </p>
+          </div>
+        </div>
+        <p class="information__border">
+          <b>Border Countries:</b>
+
+          <NuxtLink
+            class="border-button"
+            v-for="border in borders"
+            :key="border"
+            :to="{ path: 'details', query: { id: border } }"
+          >
+            {{ border }}
+          </NuxtLink>
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -56,12 +73,71 @@ export default Vue.extend({
     'languages',
     'borders',
   ],
-  //   mounted() {
-  //     axios
-  //       .get(`https://restcountries.eu/rest/v2/alpha/${this.$route.query.id}`)
-  //       .then((response) => (this.borders = response.data))
-  //   },
 })
 </script>
 
-<style></style>
+<style scoped>
+.country-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.country-info {
+  padding-left: 40px;
+}
+
+.back-button {
+  width: 90px;
+  height: 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  outline: none;
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 2px;
+  border-style: none;
+  -webkit-box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
+  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
+}
+
+a {
+  color: white;
+  opacity: 80%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+b {
+  font-weight: 600;
+}
+
+.flag {
+  width: 480px;
+  height: 300px;
+}
+
+.country-information {
+  display: inline-flex;
+  color: white;
+  font-size: small;
+}
+
+.country-information__column {
+  justify-content: space-between;
+  padding-right: 40px;
+}
+
+.information__border {
+  color: white;
+  justify-content: end;
+}
+.border-button {
+  margin: 5px;
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
+  border-style: solid 2px;
+  padding: 0 17px;
+  height: 25px;
+}
+</style>

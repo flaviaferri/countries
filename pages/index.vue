@@ -1,8 +1,7 @@
 <template>
   <div class="container">
-    <div class="search">
-      <search></search>
-      <filter-region></filter-region>
+    <div>
+      <filter-region @changed="getCountries"></filter-region>
     </div>
 
     <div class="cards">
@@ -25,36 +24,34 @@ import Vue from 'vue'
 import axios from 'axios'
 import Card from '~/components/Card.vue'
 import FilterRegion from '~/components/FilterRegion.vue'
-import Search from '~/components/Search.vue'
 
 export default Vue.extend({
-  components: { FilterRegion, Search },
+  components: { FilterRegion },
   data() {
     return {
       countries: [],
     }
   },
+  methods: {
+    getCountries(region) {
+      return axios
+        .get(`https://restcountries.eu/rest/v2/region/${region}`)
+        .then((response) => (this.countries = response.data))
+    },
+  },
 
   mounted() {
-    axios
-      .get('https://restcountries.eu/rest/v2/region/europe')
-      .then((response) => (this.countries = response.data))
+    this.getCountries('Europe')
   },
 })
 </script>
 
-<style>
-.container {
-  margin: 50px;
-}
-.search {
-  display: flex;
-  justify-content: space-between;
-}
+<style scoped>
 .cards {
-  margin: 20px -20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 </style>

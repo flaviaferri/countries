@@ -1,5 +1,5 @@
 <template>
-  <div class="datailCountry">
+  <div class="container">
     <country-detail
       :flag="countryDetail.flag"
       :name="countryDetail.name"

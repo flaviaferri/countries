@@ -1,8 +1,14 @@
 <template>
   <div class="header">
-    <div class="navBar">
-      <NuxtLink class="navBar__link" to="/">Home</NuxtLink>
-      <NuxtLink class="navBar__link" to="/">About</NuxtLink>
+    <div class="container">
+      <div class="navBar">
+        <h3>Where in the world?</h3>
+        <div class="navBar__link">
+          <NuxtLink to="/">Home</NuxtLink>
+          <NuxtLink to="/">About</NuxtLink>
+          <NuxtLink to="/game">Game</NuxtLink>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -13,54 +19,22 @@ import Vue from 'vue'
 export default {}
 </script>
 
-<style>
-.navBar {
-  background-color: hsl(209, 23%, 22%);
-}
-.navBar__link {
+<style scoped>
+a {
+  text-decoration: none;
   font-weight: 500;
   color: white;
   opacity: 90%;
-  display: inline-block;
-  text-decoration: none;
-  padding: 20px;
-  position: relative;
+  padding: 0 15px;
 }
 
-.navBar__link:hover {
-  color: white;
+.header {
+  background-color: hsl(209, 23%, 22%);
 }
 
-.navBar__link:hover:after {
-  color: white;
-  display: inline-block;
-}
-
-/* .navBar__link:after {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  content: ' ';
-  width: 30%;
-  height: 2px;
-  background: white;
-} */
-
-.navBar__link:after {
-  content: ' ';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  content: ' ';
-  width: 30%;
-  height: 2px;
-  background: white;
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>
