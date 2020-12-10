@@ -19,4 +19,13 @@ export default Vue.extend({})
   padding-top: 60px;
   min-height: 80vh;
 }
+
+@media only screen and (max-width: 800px) {
+}
+
+@media only screen and (max-width: 375px) {
+  .main {
+    padding-top: 80px;
+  }
+}
 </style>

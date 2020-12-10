@@ -39,15 +39,17 @@
         </div>
         <p class="information__border">
           <b>Border Countries:</b>
-
+          <div class="border-buttons">
           <NuxtLink
-            class="border-button"
+            class="border-button-country"
             v-for="border in borders"
             :key="border"
             :to="{ path: 'details', query: { id: border } }"
           >
             {{ border }}
           </NuxtLink>
+          </div>
+
         </p>
       </div>
     </div>
@@ -113,14 +115,18 @@ b {
 }
 
 .flag {
-  width: 480px;
-  height: 300px;
+  width: 440px;
+  max-height: 300px;
 }
 
 .country-information {
   display: inline-flex;
   color: white;
   font-size: small;
+}
+
+.country-info__name {
+  margin-top: 0;
 }
 
 .country-information__column {
@@ -132,7 +138,7 @@ b {
   color: white;
   justify-content: end;
 }
-.border-button {
+.border-button-country {
   margin: 5px 10px 5px 0px;
   background-color: hsl(209, 23%, 22%);
   box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
@@ -141,5 +147,78 @@ b {
   height: 25px;
   display: inline-flex;
   align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+   .country-info__name {
+    margin-top: 15px;
+  }
+
+    .countryDetail {
+    width: 100%;
+  
+  }
+
+  .country-info{
+    padding-left: 0;
+  }
+
+  .country-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .country-information__column{
+    margin-right: 60px;
+  }   
+
+  .flag {
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
+  .country-info__name {
+    margin-top: 15px;
+  }
+
+  .countryDetail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .country-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .country-information {
+    display: block;
+  }
+
+  .country-info {
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .country-information__column {
+    margin-top: 30px;
+  }
+
+  .flag {
+    width: 100%;
+  }
+  .information__border {
+    display: flex;
+    flex-direction: column;
+  }
+  .border-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
 }
 </style>

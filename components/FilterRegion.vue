@@ -46,6 +46,7 @@ export default Vue.extend({
 }
 
 .title {
+  color: white;
   margin: 0;
   font-weight: 350;
 }

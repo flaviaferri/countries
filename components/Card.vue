@@ -68,4 +68,18 @@ export default Vue.extend({
 .capital {
   margin-bottom: 40px;
 }
+
+@media only screen and (max-width: 800px) {
+  .country {
+    width: 40%;
+    margin: 25px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .country {
+    margin: 25px;
+    width: 100%;
+  }
+}
 </style>
