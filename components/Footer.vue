@@ -60,4 +60,6 @@ a svg {
   align-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 800px) {
+}
 </style>

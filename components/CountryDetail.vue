@@ -13,7 +13,7 @@
         <div class="country-information">
           <div class="country-information__column">
             <p><b>Native Name:</b> {{ nativeName }}</p>
-            <p><b>Population:</b> {{ population }}</p>
+            <p><b>Population:</b> {{ population | numFormat('0,0') }}</p>
             <p><b>Region:</b> {{ region }}</p>
             <p><b>Sub Region:</b> {{ subregion }}</p>
             <p><b>Capital:</b> {{ capital }}</p>
@@ -37,20 +37,19 @@
             </p>
           </div>
         </div>
-        <p class="information__border">
+        <div class="information__border">
           <b>Border Countries:</b>
           <div class="border-buttons">
-          <NuxtLink
-            class="border-button-country"
-            v-for="border in borders"
-            :key="border"
-            :to="{ path: 'details', query: { id: border } }"
-          >
-            {{ border }}
-          </NuxtLink>
+            <NuxtLink
+              class="border-button-country"
+              v-for="border in borders"
+              :key="border"
+              :to="{ path: 'details', query: { id: border } }"
+            >
+              {{ border }}
+            </NuxtLink>
           </div>
-
-        </p>
+        </div>
       </div>
     </div>
   </div>
@@ -127,6 +126,7 @@ b {
 
 .country-info__name {
   margin-top: 0;
+  color: white;
 }
 
 .country-information__column {
@@ -150,16 +150,15 @@ b {
 }
 
 @media only screen and (max-width: 800px) {
-   .country-info__name {
+  .country-info__name {
     margin-top: 15px;
   }
 
-    .countryDetail {
+  .countryDetail {
     width: 100%;
-  
   }
 
-  .country-info{
+  .country-info {
     padding-left: 0;
   }
 
@@ -168,9 +167,9 @@ b {
     flex-direction: column;
   }
 
-  .country-information__column{
+  .country-information__column {
     margin-right: 60px;
-  }   
+  }
 
   .flag {
     width: 100%;
@@ -179,7 +178,6 @@ b {
 }
 
 @media only screen and (max-width: 375px) {
-
   .country-info__name {
     margin-top: 15px;
   }
@@ -219,6 +217,5 @@ b {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
 }
 </style>

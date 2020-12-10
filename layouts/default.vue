@@ -21,11 +21,16 @@ export default Vue.extend({})
 }
 
 @media only screen and (max-width: 800px) {
+  .main {
+    padding-top: 60px;
+    min-height: calc(100vh - 138px);
+  }
 }
 
 @media only screen and (max-width: 375px) {
   .main {
     padding-top: 80px;
+    min-height: calc(100vh - 157px);
   }
 }
 </style>

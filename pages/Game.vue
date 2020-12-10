@@ -35,6 +35,12 @@ export default Vue.extend({
             response.data[Math.floor(Math.random() * response.data.length)]
         })
     },
+
+    /*     const rightAnswer = 'name',
+
+    generateSortList() {
+      const names = ['name', 'name2', 'name3']
+      return */
   },
 
   mounted() {

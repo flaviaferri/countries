@@ -50,6 +50,9 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  color: white;
+}
 a {
   text-decoration: none;
   font-weight: 500;

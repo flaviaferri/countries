@@ -17,7 +17,9 @@
     "@nuxtjs/axios": "^5.12.2",
     "core-js": "^3.6.5",
     "normalize.css": "^8.0.1",
+    "numeral": "^2.0.6",
     "nuxt": "^2.14.6",
+    "vue-filter-number-format": "^3.0.1",
     "vue-select": "^3.10.8"
   },
   "devDependencies": {
