@@ -85,7 +85,7 @@ a:hover {
   display: none;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 640px) {
   .nav-bar {
     color: white;
   }

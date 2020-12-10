@@ -20,14 +20,14 @@ export default Vue.extend({})
   min-height: 80vh;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .main {
     padding-top: 60px;
     min-height: calc(100vh - 138px);
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 640px) {
   .main {
     padding-top: 80px;
     min-height: calc(100vh - 157px);

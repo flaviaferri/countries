@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;768&display=swap');
 
 html {
   font-family: 'Nunito Sans', sans-serif;
@@ -15,14 +15,14 @@ body {
   padding: 0 40px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .container {
     margin-right: 30px;
     margin-left: 30px;
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 640px) {
   .container {
     margin-right: auto;
     margin-left: auto;

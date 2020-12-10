@@ -73,6 +73,13 @@ h3 {
 
 .button-answer {
   margin-bottom: 15px;
+  background-color: hsl(208, 21%, 41%);
+  color: white;
+  border: 0;
+  padding: 10px;
+  min-height: 40px;
+  max-width: 240px;
+  cursor: pointer;
 }
 
 .button {
@@ -95,7 +102,6 @@ h3 {
   margin: 30px 0;
   outline: none;
   background-color: hsl(209, 23%, 22%);
-  border-radius: 2px;
   border-style: none;
   -webkit-box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
   box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
@@ -114,14 +120,14 @@ div {
   color: white;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .flag {
     width: 100%;
     max-height: 100%;
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 640px) {
   h3 {
     margin-top: 10px;
   }
@@ -147,7 +153,6 @@ div {
 
   .button-answer {
     margin-right: 10px;
-    height: 40px;
   }
   .refresh-button {
     width: -webkit-fill-available;

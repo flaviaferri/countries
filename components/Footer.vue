@@ -30,7 +30,7 @@ export default {}
 a {
   text-decoration: none;
   color: white;
-  opacity: 90%;
+  opacity: 0.9;
   padding: 0 15px;
 }
 
@@ -60,6 +60,6 @@ a svg {
   align-items: center;
   justify-content: center;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
 }
 </style>

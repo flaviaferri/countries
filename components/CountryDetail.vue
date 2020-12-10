@@ -41,12 +41,13 @@
           <b>Border Countries:</b>
           <div class="border-buttons">
             <NuxtLink
-              class="border-button-country"
               v-for="border in borders"
               :key="border"
               :to="{ path: 'details', query: { id: border } }"
             >
-              {{ border }}
+              <div class="border-button-country">
+                {{ border }}
+              </div>
             </NuxtLink>
           </div>
         </div>
@@ -97,14 +98,13 @@ export default Vue.extend({
   outline: none;
   background-color: hsl(209, 23%, 22%);
   border-radius: 2px;
-  border-style: none;
   -webkit-box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
   box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
 }
 
 a {
   color: white;
-  opacity: 80%;
+  opacity: 0.8;
   cursor: pointer;
   text-decoration: none;
 }
@@ -142,14 +142,13 @@ b {
   margin: 5px 10px 5px 0px;
   background-color: hsl(209, 23%, 22%);
   box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
-  border-style: solid 2px;
   padding: 0 17px;
   height: 25px;
   display: inline-flex;
   align-items: center;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .country-info__name {
     margin-top: 15px;
   }
@@ -177,7 +176,7 @@ b {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 640px) {
   .country-info__name {
     margin-top: 15px;
   }
