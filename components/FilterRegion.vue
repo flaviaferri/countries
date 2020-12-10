@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import 'vue-select/dist/vue-select.css'
 import vSelect from 'vue-select'

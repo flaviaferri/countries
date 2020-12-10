@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import axios from 'axios'
 import Game from '~/components/Game.vue'
