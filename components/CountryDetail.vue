@@ -1,7 +1,6 @@
 <template>
   <div class="countryDetail" id="countryDetail">
     <a class="back-button" @click="$router.go(-1)"> Back</a>
-
     <div class="country-content">
       <div class="flag-wrapper">
         <img :src="flag" alt="name" class="flag" />
@@ -37,7 +36,7 @@
             </p>
           </div>
         </div>
-        <div class="information__border">
+        <div class="information__border" v-if="borders && borders.length > 0">
           <b>Border Countries:</b>
           <div class="border-buttons">
             <NuxtLink
@@ -138,6 +137,7 @@ b {
   color: white;
   justify-content: end;
 }
+
 .border-button-country {
   margin: 5px 10px 5px 0px;
   background-color: hsl(209, 23%, 22%);
@@ -207,10 +207,12 @@ b {
   .flag {
     width: 100%;
   }
+
   .information__border {
     display: flex;
     flex-direction: column;
   }
+
   .border-buttons {
     display: flex;
     flex-direction: row;

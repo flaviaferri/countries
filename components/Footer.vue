@@ -42,9 +42,9 @@ a svg {
   background-color: hsl(209, 23%, 22%);
   width: 100%;
   display: flex;
-
   color: white;
   text-align: center;
+  margin-top: 20px;
 }
 
 .footer__link {
@@ -59,7 +59,5 @@ a svg {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-@media only screen and (max-width: 768px) {
 }
 </style>

@@ -61,6 +61,7 @@ h3 {
   margin-top: 0;
   font-weight: 500;
 }
+
 .container {
   display: flex;
   margin-top: 40px;
@@ -154,6 +155,7 @@ div {
   .button-answer {
     margin-right: 10px;
   }
+
   .refresh-button {
     width: -webkit-fill-available;
     height: 40px;

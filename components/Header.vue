@@ -53,6 +53,7 @@ export default {
 h3 {
   color: white;
 }
+
 a {
   text-decoration: none;
   font-weight: 500;
@@ -81,6 +82,7 @@ a:hover {
 .icon-bar {
   display: none;
 }
+
 .icon-close {
   display: none;
 }
@@ -89,13 +91,16 @@ a:hover {
   .nav-bar {
     color: white;
   }
+
   .nav-bar__link {
     display: none;
   }
+
   .icon-bar {
     display: flex;
     align-items: flex-end;
   }
+
   .icon-close {
     display: none;
   }
@@ -104,6 +109,7 @@ a:hover {
     display: flex;
     align-items: flex-start;
   }
+
   .nav-bar__link.open {
     display: flex;
     align-items: flex-end;

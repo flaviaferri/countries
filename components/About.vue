@@ -50,6 +50,7 @@ export default {}
   margin-top: 40px;
   color: white;
 }
+
 @media only screen and (max-width: 768px) {
   .about-card {
     width: 100%;
