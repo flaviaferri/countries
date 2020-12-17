@@ -6,7 +6,7 @@
 
     <div class="cards">
       <card
-        v-for="country in countries"
+        v-for="(country, index) in countries"
         :key="country.alpha2Code"
         :flag="country.flag"
         :name="country.name"
@@ -14,8 +14,15 @@
         :population="country.population"
         :region="country.region"
         :capital="country.capital"
+        :index="index"
+        :amountOfCards="amountOfCards"
       />
     </div>
+
+    <button class="seeAllButton" @click="handleButtonClick">
+      <span v-if="amountOfCards === countries.length">Show less countries</span>
+      <span v-else>See all countries</span>
+    </button>
   </div>
 </template>
 
@@ -25,18 +32,36 @@ import axios from 'axios'
 import Card from '~/components/Card.vue'
 import FilterRegion from '~/components/FilterRegion.vue'
 
+const CARDS_TO_BE_SHOW = 10
+
 export default Vue.extend({
   components: { FilterRegion },
   data() {
     return {
       countries: [],
+      amountOfCards: CARDS_TO_BE_SHOW,
     }
   },
   methods: {
+    setAmountOfCards(amountOfCards) {
+      this.amountOfCards = amountOfCards
+    },
+
+    handleButtonClick() {
+      if (this.amountOfCards !== this.countries.length) {
+        this.setAmountOfCards(this.countries.length)
+        return
+      }
+
+      return this.setAmountOfCards(CARDS_TO_BE_SHOW)
+    },
     getCountries(region) {
       return axios
         .get(`https://restcountries.eu/rest/v2/region/${region}`)
-        .then((response) => (this.countries = response.data))
+        .then((response) => {
+          this.countries = response.data
+          this.setAmountOfCards(CARDS_TO_BE_SHOW)
+        })
     },
   },
 
@@ -53,5 +78,21 @@ export default Vue.extend({
   justify-content: space-between;
   margin-left: -20px;
   margin-right: -20px;
+}
+
+.seeAllButton {
+  color: white;
+  text-decoration: none;
+  width: 25%;
+  height: 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  outline: none;
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 2px;
+  -webkit-box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
+  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
 }
 </style>

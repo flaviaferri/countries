@@ -1,5 +1,5 @@
 <template>
-  <div class="country" id="country">
+  <div class="country" id="country" v-if="index < amountOfCards">
     <NuxtLink :to="{ path: 'details', query: { id: code } }">
       <div class="country__image" :style="flagImage"></div>
     </NuxtLink>
@@ -13,7 +13,16 @@
 <script>
 import Vue from 'vue'
 export default Vue.extend({
-  props: ['flag', 'name', 'population', 'region', 'capital', 'code'],
+  props: [
+    'flag',
+    'name',
+    'population',
+    'region',
+    'capital',
+    'code',
+    'index',
+    'amountOfCards',
+  ],
 
   computed: {
     flagImage() {
