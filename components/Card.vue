@@ -4,7 +4,9 @@
       <div class="country__image" :style="flagImage"></div>
     </NuxtLink>
     <h3 class="name">{{ name }}</h3>
-    <p class="information population"><b>Population:</b> {{ population }}</p>
+    <p class="information population">
+      <b>Population:</b> {{ population | numFormat('0,0') }}
+    </p>
     <p class="information region"><b>Region:</b> {{ region }}</p>
     <p class="information capital"><b>Capital:</b> {{ capital }}</p>
   </div>

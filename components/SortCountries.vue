@@ -1,13 +1,13 @@
 <template>
-  <div class="filter-wrapper">
-    <div class="filter">
+  <div class="sort-wrapper">
+    <div class="sort">
       <v-select
         class="custom"
         :clearable="false"
         v-model="selected"
-        @input="onFilterChange"
+        @input="onSortChange"
         :options="options"
-        placeholder="Filter by Region"
+        placeholder="Sort by"
       ></v-select>
     </div>
   </div>
@@ -22,16 +22,20 @@ Vue.component('v-select', vSelect)
 
 export default Vue.extend({
   props: ['default'],
-
   data() {
     return {
       selected: this.default,
-      options: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
+      options: [
+        'Ascending Name',
+        'Descending Name',
+        'Biggest Population',
+        'Smallest Population',
+      ],
     }
   },
 
   methods: {
-    onFilterChange(value) {
+    onSortChange(value) {
       this.$emit('changed', value)
     },
   },
@@ -39,11 +43,11 @@ export default Vue.extend({
 </script>
 
 <style>
-.filter-wrapper {
+.sort-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
 .title {
@@ -52,7 +56,7 @@ export default Vue.extend({
   font-weight: 350;
 }
 
-.filter {
+.sort {
   color: hsl(0, 0%, 100%);
   background-color: hsl(209, 23%, 22%);
   width: 200px;
