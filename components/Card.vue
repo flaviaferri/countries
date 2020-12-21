@@ -1,10 +1,10 @@
 <template>
-  <div class="country shadow-default" id="country" v-if="index < amountOfCards">
+  <div class="card shadow-default" id="card" v-if="index < amountOfCards">
     <NuxtLink
       :to="{ path: 'details', query: { id: code } }"
       class="card__information"
     >
-      <div class="country__image" :style="flagImage"></div>
+      <div class="card__image" :style="flagImage"></div>
       <h3 class="name">{{ name }}</h3>
       <p class="information population">
         <b>Population:</b> {{ population | numFormat('0,0') }}
@@ -40,9 +40,8 @@ export default Vue.extend({
 </script>
 
 <style>
-.country {
+.card {
   color: white;
-  width: 20%;
   background: hsl(209, 23%, 22%);
   border-radius: 5px;
   justify-content: space-between;
@@ -50,7 +49,7 @@ export default Vue.extend({
   transition: all 0.05s ease-in-out;
 }
 
-.country__image {
+.card__image {
   width: 100%;
   height: 140px;
   overflow: hidden;
@@ -63,7 +62,7 @@ export default Vue.extend({
   background-position: center;
 }
 
-.country:hover {
+.card:hover {
   transform: translateY(-8px);
 }
 
@@ -87,16 +86,14 @@ export default Vue.extend({
 }
 
 @media only screen and (max-width: 768px) {
-  .country {
-    width: 40%;
+  .card {
     margin: 25px;
   }
 }
 
 @media only screen and (max-width: 640px) {
-  .country {
+  .card {
     margin: 25px;
-    width: 100%;
   }
 }
 </style>

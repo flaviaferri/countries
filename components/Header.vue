@@ -77,6 +77,7 @@ a:hover {
 
 .icon-bar {
   display: none;
+  cursor: pointer;
 }
 
 .icon-close {

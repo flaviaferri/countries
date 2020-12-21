@@ -43,7 +43,14 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px 10px;
+}
+
+/* Mobile large */
+@media only screen and (max-width: 640px) {
+  .filter-wrapper {
+    padding: 10px 0;
+  }
 }
 
 .title {

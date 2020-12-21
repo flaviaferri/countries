@@ -29,7 +29,7 @@
       />
     </div>
 
-    <button class="button seeAll" @click="handleButtonClick">
+    <button class="button see-all-button" @click="handleButtonClick">
       <span v-if="amountOfCards === countries.length">Show less countries</span>
       <span v-else>See all countries</span>
     </button>
@@ -140,25 +140,63 @@ export default Vue.extend({
 
 <style scoped>
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
   margin-left: -20px;
   margin-right: -20px;
 }
 
+/* Tablet */
+@media only screen and (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile large */
+@media only screen and (max-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile small */
+@media only screen and (max-width: 480px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Filters */
 .filters {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Tablet */
+@media only screen and (max-width: 768px) {
+  .filters {
+    flex-direction: row;
+  }
 }
 
 .filters__selectors {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
-.seeAll {
+/* Mobile large */
+@media only screen and (max-width: 640px) {
+  .filters__selectors {
+    justify-content: flex-start;
+  }
+}
+
+.see-all-button {
   width: 200px;
   height: 25px;
   display: flex;
