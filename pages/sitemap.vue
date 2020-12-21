@@ -2,7 +2,10 @@
   <div class="container">
     <ul>
       <li v-for="link in links()" :key="link.name">
-        <NuxtLink :to="link.path" class="sitemap"> {{ link.name }}</NuxtLink>
+        <NuxtLink :to="link.path" class="sitemap">
+          <span v-if="link.name === 'index'">Home</span>
+          <span v-else>{{ link.name }}</span>
+        </NuxtLink>
       </li>
     </ul>
   </div>
