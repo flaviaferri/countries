@@ -29,7 +29,7 @@
       />
     </div>
 
-    <button class="seeAllButton" @click="handleButtonClick">
+    <button class="button seeAll" @click="handleButtonClick">
       <span v-if="amountOfCards === countries.length">Show less countries</span>
       <span v-else>See all countries</span>
     </button>
@@ -157,19 +157,10 @@ export default Vue.extend({
   justify-content: flex-end;
 }
 
-.seeAllButton {
-  color: white;
-  text-decoration: none;
-  width: 25%;
+.seeAll {
+  width: 200px;
   height: 25px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0;
-  outline: none;
-  background-color: hsl(209, 23%, 22%);
-  border-radius: 2px;
-  -webkit-box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
-  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
+  display: flex;
+  margin: auto;
 }
 </style>

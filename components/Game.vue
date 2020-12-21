@@ -9,7 +9,7 @@
         <button
           v-for="country in sortedList()"
           :key="country"
-          class="button-answer"
+          class="answer-button"
           :disabled="isCorrect != null"
           @click="isCorrectCountry(country)"
         >
@@ -21,7 +21,7 @@
           <div v-else>
             INCORRECT! The correct Country is <b>{{ name }}</b>
           </div>
-          <a class="refresh-button" @click="$router.go()"> Try Again</a>
+          <a class="button refresh" @click="$router.go()"> Try Again</a>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@ h3 {
   max-height: 300px;
 }
 
-.button-answer {
+.answer-button {
   margin-bottom: 15px;
   background-color: hsl(208, 21%, 41%);
   color: white;
@@ -81,31 +81,22 @@ h3 {
   min-height: 40px;
   max-width: 240px;
   cursor: pointer;
+  transition: all 0.05s ease-in-out;
 }
 
-.button {
+.answer-button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.answer-button:active {
+  transform: scale(0.99);
+}
+
+.refresh {
   margin: 5px 10px 5px 0px;
-  background-color: hsl(209, 23%, 22%);
-  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
-  border-style: solid 2px;
-  padding: 0 17px;
-  height: 25px;
-  display: inline-flex;
-  align-items: center;
-}
-
-.refresh-button {
   width: 90px;
   height: 25px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0;
-  outline: none;
-  background-color: hsl(209, 23%, 22%);
-  border-style: none;
-  -webkit-box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
-  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
 }
 
 .question {
@@ -137,12 +128,6 @@ div {
     width: 100%;
   }
 
-  .border-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
   .question {
     margin-left: 0;
   }
@@ -156,7 +141,7 @@ div {
     margin-right: 10px;
   }
 
-  .refresh-button {
+  .refresh {
     width: -webkit-fill-available;
     height: 40px;
   }

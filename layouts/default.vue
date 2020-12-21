@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <Header />
     <Nuxt class="main" />
     <Footer />
@@ -17,7 +17,8 @@ export default Vue.extend({})
 <style>
 .main {
   padding-top: 60px;
-  min-height: 80vh;
+  min-height: calc(100vh - 156px);
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 768px) {

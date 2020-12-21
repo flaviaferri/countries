@@ -1,6 +1,6 @@
 <template>
   <div class="countryDetail" id="countryDetail">
-    <a class="back-button" @click="$router.go(-1)"> Back</a>
+    <a class="button back" @click="$router.go(-1)"> Back</a>
     <div class="country-content">
       <div class="flag-wrapper">
         <img :src="flag" alt="name" class="flag" />
@@ -44,7 +44,7 @@
               :key="border"
               :to="{ path: 'details', query: { id: border } }"
             >
-              <div class="border-button-country">
+              <div class="button border-country">
                 {{ border }}
               </div>
             </NuxtLink>
@@ -87,18 +87,9 @@ export default Vue.extend({
   padding-left: 40px;
 }
 
-.back-button {
+.back {
   width: 90px;
   height: 25px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0;
-  outline: none;
-  background-color: hsl(209, 23%, 22%);
-  border-radius: 2px;
-  -webkit-box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
-  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
 }
 
 a {
@@ -138,14 +129,10 @@ b {
   justify-content: end;
 }
 
-.border-button-country {
+.border-country {
   margin: 5px 10px 5px 0px;
-  background-color: hsl(209, 23%, 22%);
-  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
   padding: 0 17px;
   height: 25px;
-  display: inline-flex;
-  align-items: center;
 }
 
 @media only screen and (max-width: 768px) {
