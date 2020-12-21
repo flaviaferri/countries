@@ -20,11 +20,11 @@
         />
 
         <div
-          v-bind:class="[isMenuOpen ? 'nav-bar__link open' : 'nav-bar__link']"
+          v-bind:class="[isMenuOpen ? 'nav-bar__links open' : 'nav-bar__links']"
         >
-          <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/about">About</NuxtLink>
-          <NuxtLink to="/game">Game</NuxtLink>
+          <NuxtLink class="nav-bar__link" to="/">Home</NuxtLink>
+          <NuxtLink class="nav-bar__link" to="/about">About</NuxtLink>
+          <NuxtLink class="nav-bar__link" to="/game">Game</NuxtLink>
         </div>
       </div>
     </div>
@@ -54,11 +54,7 @@ h3 {
   color: white;
 }
 
-a {
-  text-decoration: none;
-  font-weight: 500;
-  color: white;
-  opacity: 0.9;
+.nav-bar__link {
   padding: 0 15px;
 }
 
@@ -92,7 +88,7 @@ a:hover {
     color: white;
   }
 
-  .nav-bar__link {
+  .nav-bar__links {
     display: none;
   }
 
@@ -110,7 +106,7 @@ a:hover {
     align-items: flex-start;
   }
 
-  .nav-bar__link.open {
+  .nav-bar__links.open {
     display: flex;
     align-items: flex-end;
     padding: 20px;

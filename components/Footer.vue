@@ -1,8 +1,8 @@
 <template>
   <div class="footer">
     <div class="container">
-      <div class="footer__link">
-        <NuxtLink to="/sitemap">Sitemap</NuxtLink>
+      <div class="footer__links">
+        <NuxtLink class="footer__link" to="/sitemap">Sitemap</NuxtLink>
       </div>
       <div class="footer__icons">
         <a href="https://www.linkedin.com/in/flavia-ferri/"
@@ -23,13 +23,6 @@ export default {}
 </script>
 
 <style scoped>
-a {
-  text-decoration: none;
-  color: white;
-  opacity: 0.9;
-  padding: 0 15px;
-}
-
 a svg {
   padding-right: 5px;
 }
@@ -43,6 +36,10 @@ a svg {
 }
 
 .footer__link {
+  padding: 0 15px;
+}
+
+.footer__links {
   padding: 10px 0;
 }
 

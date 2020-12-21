@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="about-card">
+    <div class="about-card shadow-default">
       <h3 class="about-title">About</h3>
       <p class="about-text">
         This site was built with a goal to provide the overview and source of
@@ -18,10 +18,6 @@
   </div>
 </template>
 
-<script>
-export default {}
-</script>
-
 <style scoped>
 .container {
   display: flex;
@@ -30,30 +26,25 @@ export default {}
 }
 
 .about-card {
-  color: white;
   width: 50%;
   background: hsl(209, 23%, 22%);
-  -webkit-box-shadow: 5px 5px 17px -7px #000000;
-  box-shadow: 5px 5px 17px -7px #000000;
   border-radius: 5px;
   justify-content: space-between;
   margin: 20px;
   padding: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+  .about-card {
+    width: 100%;
+  }
+}
+
 .about-title {
-  color: white;
   font-weight: 600;
 }
 
 .about-text {
   margin-top: 40px;
-  color: white;
-}
-
-@media only screen and (max-width: 768px) {
-  .about-card {
-    width: 100%;
-  }
 }
 </style>

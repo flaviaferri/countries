@@ -31,13 +31,10 @@ export default Vue.extend({
 
 <style>
 li {
-  color: white;
-}
-.sitemap {
-  color: white;
-  text-decoration: none;
-  text-transform: capitalize;
-  display: block;
   padding: 20px 0 0 20px;
+}
+
+.sitemap {
+  text-transform: capitalize;
 }
 </style>

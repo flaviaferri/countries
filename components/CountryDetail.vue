@@ -92,13 +92,6 @@ export default Vue.extend({
   height: 25px;
 }
 
-a {
-  color: white;
-  opacity: 0.8;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 b {
   font-weight: 600;
 }

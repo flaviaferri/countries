@@ -15,14 +15,14 @@
         >
           {{ country }}
         </button>
+      </div>
 
-        <div v-if="isCorrect != null">
-          <div v-if="isCorrect">CORRECT!</div>
-          <div v-else>
-            INCORRECT! The correct Country is <b>{{ name }}</b>
-          </div>
-          <a class="button refresh" @click="$router.go()"> Try Again</a>
+      <div v-if="isCorrect != null">
+        <div v-if="isCorrect">CORRECT!</div>
+        <div v-else>
+          INCORRECT! The correct Country is <b>{{ name }}</b>
         </div>
+        <a class="button refresh" @click="$router.go()"> Try Again</a>
       </div>
     </div>
   </div>
@@ -75,18 +75,21 @@ h3 {
 .answer-button {
   margin-bottom: 15px;
   background-color: hsl(208, 21%, 41%);
-  color: white;
   border: 0;
   padding: 10px;
   min-height: 40px;
   max-width: 240px;
   cursor: pointer;
   transition: all 0.05s ease-in-out;
+  color: white;
+}
+
+.answer-button:hover {
+  transform: translateY(2px);
 }
 
 .answer-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
+  background-color: hsl(209, 22%, 20%);
 }
 
 .answer-button:active {
@@ -106,10 +109,6 @@ h3 {
 .answer {
   display: flex;
   flex-direction: column;
-}
-
-div {
-  color: white;
 }
 
 @media only screen and (max-width: 768px) {

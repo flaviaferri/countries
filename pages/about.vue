@@ -10,5 +10,3 @@ export default Vue.extend({
   components: { About },
 })
 </script>
-
-<style></style>

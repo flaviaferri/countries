@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;768&display=swap');
 
+/* Structure properties */
 html {
   font-family: 'Nunito Sans', sans-serif;
 }
@@ -24,25 +25,6 @@ div#__layout,
   padding: 0 40px;
 }
 
-.button {
-  color: white;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0;
-  outline: none;
-  background-color: hsl(209, 23%, 22%);
-  border-radius: 2px;
-  -webkit-box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
-  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
-  transition: all 0.05s ease-in-out;
-  border: none;
-  cursor: pointer;
-}
-
-.button:active {
-  transform: translateY(2px);
-}
 @media only screen and (max-width: 768px) {
   .container {
     margin-right: 30px;
@@ -55,4 +37,39 @@ div#__layout,
     margin-right: auto;
     margin-left: auto;
   }
+}
+
+/* Global buttons style */
+.button {
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  outline: none;
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 2px;
+  box-shadow: 5px 10px 20px -4px rgba(0, 0, 0, 0.33);
+  transition: all 0.05s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: hsl(209, 22%, 20%);
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+/* Global Shadow */
+.shadow-default {
+  box-shadow: 5px 5px 17px -7px #000000;
+}
+
+/* Global link style */
+a {
+  color: white;
+  text-decoration: none;
 }

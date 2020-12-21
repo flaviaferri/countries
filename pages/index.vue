@@ -146,6 +146,7 @@ export default Vue.extend({
   margin-left: -20px;
   margin-right: -20px;
 }
+
 .filters {
   display: flex;
   align-items: center;

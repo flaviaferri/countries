@@ -1,5 +1,5 @@
 <template>
-  <div class="country" id="country" v-if="index < amountOfCards">
+  <div class="country shadow-default" id="country" v-if="index < amountOfCards">
     <NuxtLink
       :to="{ path: 'details', query: { id: code } }"
       class="card__information"
@@ -44,8 +44,6 @@ export default Vue.extend({
   color: white;
   width: 20%;
   background: hsl(209, 23%, 22%);
-  -webkit-box-shadow: 5px 5px 17px -7px #000000;
-  box-shadow: 5px 5px 17px -7px #000000;
   border-radius: 5px;
   justify-content: space-between;
   margin: 20px;
@@ -67,11 +65,6 @@ export default Vue.extend({
 
 .country:hover {
   transform: translateY(-8px);
-}
-
-.card__information {
-  color: white;
-  text-decoration: none;
 }
 
 .name {
