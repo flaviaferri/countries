@@ -3,9 +3,7 @@
     <div class="footer">
       <div class="container">
         <div class="footer__link">
-          <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/about">About</NuxtLink>
-          <NuxtLink to="/game">Game</NuxtLink>
+          <NuxtLink to="/sitemap">Sitemap</NuxtLink>
         </div>
         <div class="footer__icons">
           <a href="https://www.linkedin.com/in/flavia-ferri/"
