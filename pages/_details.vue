@@ -20,6 +20,7 @@
 <script>
 import Vue from 'vue'
 import axios from 'axios'
+import CountriesApi from '~/services/api/CountriesApi'
 import CountryDetail from '~/components/CountryDetail.vue'
 export default Vue.extend({
   components: { CountryDetail },
@@ -31,9 +32,9 @@ export default Vue.extend({
   },
   methods: {
     getCountry() {
-      return axios
-        .get(`https://restcountries.eu/rest/v2/alpha/${this.$route.query.id}`)
-        .then((response) => (this.countryDetail = response.data))
+      return CountriesApi.getCountry().then(
+        (response) => (this.countryDetail = response.data)
+      )
     },
   },
   mounted() {

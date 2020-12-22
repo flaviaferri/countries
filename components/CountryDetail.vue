@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="information__border" v-if="borders && borders.length > 0">
-          <b>Border Countries:</b>
+          <b>See border Countries:</b>
           <div class="border-buttons">
             <NuxtLink
               v-for="border in borders"

@@ -42,6 +42,7 @@ import axios from 'axios'
 import Card from '~/components/Card.vue'
 import FilterRegion from '~/components/FilterRegion.vue'
 import SortCountries from '~/components/SortCountries.vue'
+import CountriesApi from '~/services/api/CountriesApi'
 
 const CARDS_TO_BE_SHOW = 10
 
@@ -123,12 +124,10 @@ export default Vue.extend({
       return this.setAmountOfCards(CARDS_TO_BE_SHOW)
     },
     getCountries(region) {
-      return axios
-        .get(`https://restcountries.eu/rest/v2/region/${region}`)
-        .then((response) => {
-          this.countries = response.data
-          this.setAmountOfCards(CARDS_TO_BE_SHOW)
-        })
+      return CountriesApi.getCountries(region).then((data) => {
+        this.countries = data
+        this.setAmountOfCards(CARDS_TO_BE_SHOW)
+      })
     },
   },
 

@@ -13,6 +13,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import Game from '~/components/Game.vue'
+import CountriesApi from '~/services/api/CountriesApi'
 
 export default Vue.extend({
   data() {
@@ -23,22 +24,17 @@ export default Vue.extend({
     }
   },
   methods: {
-    getCountry() {
-      return axios
-        .get(`https://restcountries.eu/rest/v2/all`)
-        .then((response) => {
-          this.country =
-            response.data[Math.floor(Math.random() * response.data.length)]
-          this.country2 =
-            response.data[Math.floor(Math.random() * response.data.length)]
-          this.country3 =
-            response.data[Math.floor(Math.random() * response.data.length)]
-        })
+    getAllCountries() {
+      return CountriesApi.getAllCountries().then((data) => {
+        this.country = data[Math.floor(Math.random() * data.length)]
+        this.country2 = data[Math.floor(Math.random() * data.length)]
+        this.country3 = data[Math.floor(Math.random() * data.length)]
+      })
     },
   },
 
   mounted() {
-    this.getCountry()
+    this.getAllCountries()
   },
 })
 </script>

@@ -43,11 +43,7 @@ export default Vue.extend({
 
   methods: {
     isCorrectCountry(selectedName) {
-      if (selectedName == this.name) {
-        this.isCorrect = true
-      } else {
-        this.isCorrect = false
-      }
+      this.isCorrect = selectedName == this.name
     },
     sortedList() {
       return [this.name, this.name2, this.name3].sort()
@@ -78,7 +74,7 @@ h3 {
   border: 0;
   padding: 10px;
   min-height: 40px;
-  max-width: 240px;
+  width: 280px;
   cursor: pointer;
   transition: all 0.05s ease-in-out;
   color: white;
