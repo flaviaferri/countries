@@ -55,31 +55,56 @@ export default {
 </script>
 
 <style scoped>
-h3 {
-  color: white;
-}
-
-.nav-bar__link {
-  padding: 0 15px;
-}
-
-a:hover {
-  opacity: 1;
-}
-
+/* Header  */
 .header {
   background-color: hsl(209, 23%, 22%);
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
+/* Nav Title */
+.nav-bar__title {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 640px) {
+  .nav-bar__title.open {
+    display: none;
+  }
+}
+
+/* Nav Bar */
 .nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 640px) {
+  .nav-bar {
+    color: white;
+  }
+}
+
+/* Links */
+.nav-bar__link {
+  padding: 0 15px;
+}
+
+@media only screen and (max-width: 640px) {
+  .nav-bar__links {
+    display: none;
+  }
+
+  .nav-bar__links.open {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+}
+
+/* Mobile icons */
 .icon-bar {
   display: none;
   cursor: pointer;
@@ -88,16 +113,7 @@ a:hover {
 .icon-close {
   display: none;
 }
-
 @media only screen and (max-width: 640px) {
-  .nav-bar {
-    color: white;
-  }
-
-  .nav-bar__links {
-    display: none;
-  }
-
   .icon-bar {
     display: flex;
     align-items: flex-end;
@@ -112,17 +128,7 @@ a:hover {
     align-items: flex-start;
   }
 
-  .nav-bar__links.open {
-    display: flex;
-    align-items: flex-end;
-    padding: 20px;
-  }
-
   .icon-bar.open {
-    display: none;
-  }
-
-  .nav-bar__title.open {
     display: none;
   }
 }
