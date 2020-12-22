@@ -3,28 +3,42 @@
     <div class="about-card shadow-default">
       <h3 class="about-title">About</h3>
       <p class="about-text">
-        This site was built with a goal to provide the overview and source of
-        flags of the world. <br />
+        This site was built with a goal to provide an overview and source of
+        flags of the world.
+      </p>
 
-        <br />
+      <p class="about-text">
         Here you will find information such as flag, population, region,
-        capital, border countries, among other information. <br />
+        capital, border countries, among other information.
+      </p>
 
-        <br />
+      <p class="about-text">
         We also have a game where you can practice and increase your knowledge
-        about flag countries
+        about flag countries.
+      </p>
+
+      <p class="about-text">
+        The informations are being fetched from a open source
+        <a href="https://restcountries.eu/">API Rest Coutries</a>.
       </p>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Container */
 .container {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
 
+/* Link style */
+a {
+  text-decoration: underline;
+}
+
+/* About card */
 .about-card {
   width: 50%;
   background: hsl(209, 23%, 22%);

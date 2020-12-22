@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 export default {
-  getCountry() {
+  getCountry(country) {
     return axios
-      .get(`https://restcountries.eu/rest/v2/alpha/${this.$route.query.id}`)
+      .get(`https://restcountries.eu/rest/v2/alpha/${country}`)
       .then((response) => {
         return response.data
       })

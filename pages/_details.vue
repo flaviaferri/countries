@@ -32,8 +32,8 @@ export default Vue.extend({
   },
   methods: {
     getCountry() {
-      return CountriesApi.getCountry().then(
-        (response) => (this.countryDetail = response.data)
+      return CountriesApi.getCountry(this.$route.query.id).then(
+        (data) => (this.countryDetail = data)
       )
     },
   },
