@@ -49,6 +49,18 @@ export default Vue.extend({
   transition: all 0.05s ease-in-out;
 }
 
+@media only screen and (max-width: 768px) {
+  .card {
+    margin: 25px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .card {
+    margin: 25px;
+  }
+}
+
 .card__image {
   width: 100%;
   height: 140px;
@@ -83,17 +95,5 @@ export default Vue.extend({
 
 .capital {
   margin-bottom: 40px;
-}
-
-@media only screen and (max-width: 768px) {
-  .card {
-    margin: 25px;
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  .card {
-    margin: 25px;
-  }
 }
 </style>

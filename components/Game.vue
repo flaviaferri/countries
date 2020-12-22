@@ -1,28 +1,30 @@
 <template>
   <div class="container">
-    <div class="flag">
-      <img v-bind:src="flag" alt="" class="flag" />
-    </div>
-    <div class="question">
-      <h3>Whose flag is it?</h3>
-      <div class="answer">
-        <button
-          v-for="country in sortedList()"
-          :key="country"
-          class="answer-button"
-          :disabled="isCorrect != null"
-          @click="isCorrectCountry(country)"
-        >
-          {{ country }}
-        </button>
+    <div class="wrapper">
+      <div class="flag">
+        <img v-bind:src="flag" alt="" class="flag" />
       </div>
-
-      <div v-if="isCorrect != null">
-        <div v-if="isCorrect">CORRECT!</div>
-        <div v-else>
-          INCORRECT! The correct Country is <b>{{ name }}</b>
+      <div class="question">
+        <h3>Whose flag is it?</h3>
+        <div class="answers">
+          <button
+            v-for="country in sortedList()"
+            :key="country"
+            class="answer-button"
+            :disabled="isCorrect != null"
+            @click="isCorrectCountry(country)"
+          >
+            {{ country }}
+          </button>
         </div>
-        <a class="button refresh" @click="$router.go()"> Try Again</a>
+
+        <div v-if="isCorrect != null">
+          <div v-if="isCorrect">CORRECT!</div>
+          <div v-else>
+            INCORRECT! The correct Country is <b>{{ name }}</b>
+          </div>
+          <a class="button try-again" @click="$router.go()"> Try Again</a>
+        </div>
       </div>
     </div>
   </div>
@@ -53,28 +55,64 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-h3 {
-  margin-top: 0;
-  font-weight: 500;
-}
-
 .container {
   display: flex;
   margin-top: 40px;
 }
 
+@media only screen and (max-width: 640px) {
+  .container {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+/* Wrapper */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Flag */
 .flag {
-  width: 440px;
   max-height: 300px;
 }
 
+@media only screen and (max-width: 768px) {
+  .flag {
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
+/* Text */
+h3 {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 640px) {
+  h3 {
+    margin-top: 10px;
+  }
+}
+
+/* Button */
 .answer-button {
   margin-bottom: 15px;
   background-color: hsl(208, 21%, 41%);
   border: 0;
   padding: 10px;
   min-height: 40px;
-  width: 280px;
   cursor: pointer;
   transition: all 0.05s ease-in-out;
   color: white;
@@ -92,51 +130,21 @@ h3 {
   transform: scale(0.99);
 }
 
-.refresh {
+/* Answers */
+.answers {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Try again */
+.try-again {
   margin: 5px 10px 5px 0px;
   width: 90px;
   height: 25px;
 }
 
-.question {
-  margin-left: 20px;
-}
-
-.answer {
-  display: flex;
-  flex-direction: column;
-}
-
-@media only screen and (max-width: 768px) {
-  .flag {
-    width: 100%;
-    max-height: 100%;
-  }
-}
-
 @media only screen and (max-width: 640px) {
-  h3 {
-    margin-top: 10px;
-  }
-
-  .flag {
-    width: 100%;
-  }
-
-  .question {
-    margin-left: 0;
-  }
-
-  .container {
-    display: block;
-    margin-top: 40px;
-  }
-
-  .button-answer {
-    margin-right: 10px;
-  }
-
-  .refresh {
+  .try-again {
     width: -webkit-fill-available;
     height: 40px;
   }
