@@ -4,6 +4,7 @@
       <div class="nav-bar">
         <h3
           v-bind:class="[isMenuOpen ? 'nav-bar__title open' : 'nav-bar__title']"
+          @click="goToHome()"
         >
           Where in the world?
         </h3>
@@ -44,6 +45,10 @@ export default {
   methods: {
     toggleMenu(state) {
       this.isMenuOpen = state
+    },
+
+    goToHome() {
+      this.$router.push('/')
     },
   },
 }

@@ -178,6 +178,7 @@ export default Vue.extend({
 /* Tablet */
 @media only screen and (max-width: 768px) {
   .filters {
+    margin-top: 10px;
     flex-direction: row;
   }
 }
